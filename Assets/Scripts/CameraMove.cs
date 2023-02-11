@@ -35,7 +35,7 @@ public class CameraMove : MonoBehaviour
         float playerPosY = GameObject.Find("torso").transform.position.y;
         playerPos = new Vector3(playerPosX, playerPosY, transform.position.z);
         newPos = transform.position;
-        Vector3 smoothPos = Vector3.SmoothDamp(newPos, playerPosY, ref velocity, smoothTime, maxSpeed);
+        Vector3 smoothPos = Vector3.SmoothDamp(newPos, playerPos, ref velocity, smoothTime, maxSpeed);
         transform.position = smoothPos;
     }
 }

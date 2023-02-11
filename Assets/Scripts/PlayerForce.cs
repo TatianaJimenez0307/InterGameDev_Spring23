@@ -27,42 +27,23 @@ public class PlayerForce : MonoBehaviour
 
     // Start is called before the first frame update
 
-    //Camera move
-
-    private Vector3 playerPos;
-    Vector3 newPos;
-    [SerializeField] //makes it so that you can eedit something in the unity editor
-    [Range(10, 150f)]
-    float maxSpeed = 10f; //150 is good speed
-    [SerializeField]
-    [Range(0.0001f, 1.5f)]
-    float smoothTime = 0.5f;
-    Vector3 velocity = Vector3.zero; //if you're not moving camera is not moving
+   
 
 
 
     void Start()
     {
         mainBody = GetComponent<Rigidbody2D>(); //this does the same thing as dragging in an object into a component, we're assigning mainBody to rigidbody
-
-        //camera 
-        Vector3 playerPos = GameObject.Find("torso").transform.position;
-        newPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
 
     {
-        //Camera follow
+        
         //update torso position, then smoothdamp towards the position
 
-        float playerPosX = GameObject.Find("torso").transform.position.x;
-        float playerPosY = GameObject.Find("torso").transform.position.y;
-        playerPos = new Vector3(playerPosX, playerPosY, transform.position.z);
-        newPos = transform.position;
-        Vector3 smoothedPos = Vector3.SmoothDamp(newPos, playerPos, ref velocity, smoothTime, maxSpeed);
-        transform.position = smoothedPos; 
+        
 
 
 
